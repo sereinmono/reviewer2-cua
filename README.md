@@ -7,7 +7,7 @@
 1. **插件组（plugin groups）**：`extensions/`，即 `nano-cua-extensions`；
 2. **试验与试验记录（experiments / records）**：`experiments/`（双 Gate 评分器）与 `reports/`（实测汇总）。
 
-CUA 基座 `nano-cua` 本身**不在本仓库内**，仍保持独立 Git 仓库和零运行时依赖；本仓库通过 uv workspace 指向同级目录的 `../nano-cua`。OmniJev 的模型权重/Flide 部署也在独立目录 `../omnijev-deploy`，不混入本仓库。
+CUA 基座 `nano-cua` 本身**不在本仓库内**，仍保持独立 Git 仓库和零运行时依赖；本仓库通过 uv workspace 指向同级目录的 `../nano-cua`。OmniJev 的模型权重/Flide 部署也在独立目录（本机为 `D:\Research26fall\omnijev-deploy`），不混入本仓库。
 
 ## 目录结构
 
@@ -44,7 +44,7 @@ nano-cua-lab/
 | CUA 基座 `nano-cua` | `../nano-cua`（独立 Git 仓库） | 只作为 uv path 依赖；**本仓库不修改基座** |
 | 插件组 | `extensions/` | 可替换的 Observer/Actor/Executor 兼容层 |
 | 双 Gate 试验 | `experiments/` | 只通过公开 `AgentPolicy` 接口插入，不改基座 |
-| OmniJev/Flide 部署 | `../omnijev-deploy` | 独立部署目录；本仓库只用 HTTP 访问其 `/v1/systemone` |
+| OmniJev/Flide 部署 | `D:\Research26fall\omnijev-deploy`（独立目录） | 本仓库只用 HTTP 访问其 `/v1/systemone` |
 | 试验记录 | `reports/` | 评测方法、结果表、限制与复现命令 |
 
 ## 快速开始

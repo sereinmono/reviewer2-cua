@@ -17,12 +17,13 @@ nano-cua 基座的**外部兼容层**，是 `nano-cua-lab` 统一仓库中的**�
 需要先有同级目录的基座仓库：
 
 ```text
-prior_experiment/
-├── nano-cua/               # 基座（零运行时依赖，独立仓库）
-├── nano-cua-lab/           # 本整合仓库
-│   ├── extensions/         # 插件组（本目录）
-│   └── experiments/        # 双 Gate 试验
-└── omnijev-deploy/         # OmniJev 部署（独立目录）
+D:\Research26fall\prior_experiment\
+├── nano-cua\               # 基座（零运行时依赖，独立仓库）
+└── nano-cua-lab\           # 本整合仓库
+    ├── extensions\         # 插件组（本目录）
+    └── experiments\        # 双 Gate 试验
+
+D:\Research26fall\omnijev-deploy\   # OmniJev 部署（独立目录，不在 prior_experiment 内）
 ```
 
 ```bash

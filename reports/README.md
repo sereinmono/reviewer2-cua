@@ -13,7 +13,7 @@
 - 效率组数据：20 任务 × 2 模式，共 40 个 episode，各 1 次；
 - 使用确定性 `MockActor` / `TaskActor`、`MockHumanProvider`、本地手工构造页面、本地 OmniJev OneJev1.6-0.8B；
 - 单次运行、无重复测量、无统计显著性检验；
-- 不包含模型权重、Docker 镜像或部署配置；部署在独立目录 `../omnijev-deploy`。
+- 不包含模型权重、Docker 镜像或部署配置；部署在独立目录 `D:\Research26fall\omnijev-deploy`。
 
 ## 复现环境
 
