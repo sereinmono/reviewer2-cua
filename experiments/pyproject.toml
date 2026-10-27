@@ -1,0 +1,23 @@
+[project]
+name = "cua-gates-pilot"
+version = "0.1.0"
+description = "External two-gate pilot for nano-cua: Observe Gate + AskHuman Gate over frozen diagnostic signals, without modifying the base."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = ["nano-cua", "nano-cua-extensions"]
+
+[project.scripts]
+cua-gates-pilot = "cua_gates_pilot.main:main"
+
+[tool.uv.sources]
+nano-cua = { path = "../../nano-cua", editable = true }
+nano-cua-extensions = { workspace = true }
+
+[build-system]
+requires = ["uv_build>=0.11.0,<0.12.0"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]

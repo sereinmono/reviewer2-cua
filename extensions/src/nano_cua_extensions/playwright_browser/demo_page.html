@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nano CUA demo page</title>
+  <style>
+    html, body { height: 100%; margin: 0; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at 50% 40%, #1e293b, #0f172a 70%);
+      color: #e2e8f0;
+      overflow: hidden;
+    }
+    h1 {
+      position: absolute;
+      top: 8vh;
+      left: 0;
+      right: 0;
+      margin: 0;
+      text-align: center;
+      font-size: 34px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    #target {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 320px;
+      height: 120px;
+      border: 0;
+      border-radius: 18px;
+      background: #38bdf8;
+      color: #082f49;
+      font-size: 28px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    #target.done { background: #22c55e; color: #052e16; }
+    #status {
+      position: absolute;
+      bottom: 10vh;
+      left: 0;
+      right: 0;
+      margin: 0;
+      text-align: center;
+      font-size: 20px;
+      color: #94a3b8;
+    }
+    #status.done { color: #4ade80; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <h1>Nano CUA demo</h1>
+  <button id="target">Click me</button>
+  <p id="status">Waiting for a click&hellip;</p>
+  <script>
+    let clicks = 0;
+    const target = document.getElementById("target");
+    const status = document.getElementById("status");
+    target.addEventListener("click", (event) => {
+      clicks += 1;
+      target.classList.add("done");
+      target.textContent = "CLICKED " + clicks;
+      status.classList.add("done");
+      status.textContent = "CLICKED " + clicks + " at (" + Math.round(event.clientX) + ", " + Math.round(event.clientY) + ")";
+      document.title = "Nano CUA demo - clicked " + clicks;
+    });
+  </script>
+</body>
+</html>
