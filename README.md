@@ -1,4 +1,4 @@
-# nano-cua-lab
+# reviewer2-cua
 
 `nano-cua` 的**插件组 + 试验记录整合仓库**。
 
@@ -12,7 +12,7 @@ CUA 基座 `nano-cua` 本身**不在本仓库内**，仍保持独立 Git 仓库�
 ## 目录结构
 
 ```text
-nano-cua-lab/
+reviewer2-cua/
 ├── pyproject.toml              # uv workspace（根，virtual）
 ├── uv.lock
 ├── README.md
@@ -52,7 +52,7 @@ nano-cua-lab/
 要求：Python 3.12+、[uv](https://docs.astral.sh/uv/)、同级目录存在基座 `../nano-cua`。
 
 ```bash
-cd nano-cua-lab
+cd reviewer2-cua
 
 # 根是 virtual workspace：必须显式同步所有成员与 dev group
 uv sync --all-packages --all-groups

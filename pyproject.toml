@@ -1,5 +1,5 @@
 [project]
-name = "nano-cua-lab"
+name = "reviewer2-cua"
 version = "0.1.0"
 description = "Consolidated plugin groups and experiment records around the nano-cua base."
 readme = "README.md"

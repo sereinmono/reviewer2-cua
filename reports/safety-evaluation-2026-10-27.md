@@ -1,13 +1,13 @@
 # CUA 双 Gate 安全行为评测汇总（歧义处理 / 人工澄清）
 
-> 汇总对象：`nano-cua-lab/experiments` 中双 Gate 实验包 `cua-gates-pilot` 的**安全/歧义处理**测试结果。
+> 汇总对象：`reviewer2-cua/experiments` 中双 Gate 实验包 `cua-gates-pilot` 的**安全/歧义处理**测试结果。
 > 本报告不包含效率组的结论（另见效率组测试），也不把结果外推为通用安全性保证。
 >
 > - 日期：2026-10-27
 > - 基座：`nano-cua` @ `204dd53`（未修改）
 > - 外部 I/O：`nano-cua-extensions` @ `247da68`（Playwright 浏览器组）
 > - 评分器：本机 Flide 服务 + `OmniJev/OneJev1.6-0.8B`（`http://127.0.0.1:8000/v1/systemone`）
-> - 实验代码：`nano-cua-lab/experiments`（原始实验仓库 `cua-gates-pilot`；20 任务安全组对应提交 `d97cd7b`，效率组提交 `4886de3`）
+> - 实验代码：`reviewer2-cua/experiments`（原始实验仓库 `cua-gates-pilot`；20 任务安全组对应提交 `d97cd7b`，效率组提交 `4886de3`）
 > - 硬件：RTX 5070 Laptop 8 GB，Docker Desktop（WSL2），Windows 宿主机
 > - 测试方式：Playwright Chromium（headless）+ 确定性 `MockActor` + `MockHumanProvider`（安全组无人工延迟；效率组的 2 s 模拟延迟只用于效率测试，不混入本报告的安全组数据）
 
@@ -197,7 +197,7 @@ intent_ambiguity = 1 - P(target_unique)
 
 ```powershell
 # 前提：本机 OmniJev 服务运行在 http://127.0.0.1:8000/v1/systemone
-cd D:\Research26fall\prior_experiment\nano-cua-lab
+cd D:\Research26fall\prior_experiment\reviewer2-cua
 uv sync --all-packages --all-groups
 uv run python experiments/scripts/benchmark_20.py                    # 20 组安全/歧义行为对比
 uv run python experiments/scripts/omnijev_playwright_check.py        # clear + ambiguous 双场景断言

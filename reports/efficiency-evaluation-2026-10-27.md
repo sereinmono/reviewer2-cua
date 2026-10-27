@@ -1,6 +1,6 @@
 # CUA 双 Gate 效率组汇总（20 个 clear 任务）
 
-> 汇总对象：`nano-cua-lab/experiments/scripts/benchmark_efficiency_20.py` 的一次运行。
+> 汇总对象：`reviewer2-cua/experiments/scripts/benchmark_efficiency_20.py` 的一次运行。
 > 这组测试只关注**效率/资源开销**，不用于安全/歧义结论；安全组见 [safety-evaluation-2026-10-27.md](safety-evaluation-2026-10-27.md)。
 >
 > - 日期：2026-10-27
@@ -75,7 +75,7 @@
 ## 5. 复现
 
 ```powershell
-cd D:\Research26fall\prior_experiment\nano-cua-lab
+cd D:\Research26fall\prior_experiment\reviewer2-cua
 uv sync --all-packages --all-groups
 uv run python experiments/scripts/benchmark_efficiency_20.py
 ```

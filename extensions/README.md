@@ -1,6 +1,6 @@
 # nano-cua-extensions
 
-nano-cua 基座的**外部兼容层**，是 `nano-cua-lab` 统一仓库中的**插件组**。基座本身只包含 ports + Runner + BasicPolicy + MockActor；这里存放具体的观察/动作/模型兼容实现，因此它们不会进入 nano-cua 仓库，也不需要修改基座代码。
+nano-cua 基座的**外部兼容层**，是 `reviewer2-cua` 统一仓库中的**插件组**。基座本身只包含 ports + Runner + BasicPolicy + MockActor；这里存放具体的观察/动作/模型兼容实现，因此它们不会进入 nano-cua 仓库，也不需要修改基座代码。
 
 本目录当前包含两组：
 
@@ -19,7 +19,7 @@ nano-cua 基座的**外部兼容层**，是 `nano-cua-lab` 统一仓库中的**�
 ```text
 D:\Research26fall\prior_experiment\
 ├── nano-cua\               # 基座（零运行时依赖，独立仓库）
-└── nano-cua-lab\           # 本整合仓库
+└── reviewer2-cua\           # 本整合仓库
     ├── extensions\         # 插件组（本目录）
     └── experiments\        # 双 Gate 试验
 
@@ -27,7 +27,7 @@ D:\Research26fall\omnijev-deploy\   # OmniJev 部署（独立目录，不在 pri
 ```
 
 ```bash
-cd nano-cua-lab
+cd reviewer2-cua
 uv sync --all-packages --all-groups   # 根 workspace：同步所有成员 + dev group
 uv run playwright install chromium     # 首次安装浏览器
 uv run nano-cua-demo                   # MockActor 本地页面 demo，无需 API Key

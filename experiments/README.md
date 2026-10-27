@@ -2,7 +2,7 @@
 
 对 `nano-cua` 的**零基座修改**扩展：在主 VLM 推理前加 **Observe Gate**，在主 VLM 给出候选动作后、执行前加 **AskHuman Gate**。两个 Gate 都只消费冻结诊断器输出的归一化信号，再用固定、可读、非神经网络的函数做决策；本试点不训练任何模型。
 
-> 本目录是 `nano-cua-lab` 整合仓库中的**试验包**，依赖插件组 `../extensions` 和外部基座 `../../nano-cua`；删除本目录不会影响基座或插件组。
+> 本目录是 `reviewer2-cua` 整合仓库中的**试验包**，依赖插件组 `../extensions` 和外部基座 `../../nano-cua`；删除本目录不会影响基座或插件组。
 
 ## M0：基座公开接口核对（只读）
 
@@ -21,7 +21,7 @@
 ## 结构
 
 ```text
-nano-cua-lab/experiments/
+reviewer2-cua/experiments/
 ├── pyproject.toml
 ├── README.md
 ├── src/cua_gates_pilot/
@@ -94,7 +94,7 @@ ASK           = human_score >= 0.65
 ## 运行测试与 demo
 
 ```bash
-cd nano-cua-lab
+cd reviewer2-cua
 uv sync --all-packages --all-groups   # 根 workspace：安装基座路径依赖 + 插件组 + 试验包
 uv run pytest -q experiments/tests    # 全部离线单元测试，无真实 API / 无浏览器
 ```
@@ -147,7 +147,7 @@ uv run cua-gates-pilot --mode gated --ask-gate off
 ### 修改后的 Playwright 实测
 
 ```bash
-cd nano-cua-lab
+cd reviewer2-cua
 uv run python experiments/scripts/omnijev_playwright_check.py
 ```
 

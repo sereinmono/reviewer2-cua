@@ -1,6 +1,6 @@
 # 试验记录索引
 
-本目录保存 `nano-cua-lab` 的评测记录。所有记录都是**功能级对比**，不是正式 benchmark、统计检验或安全保证。
+本目录保存 `reviewer2-cua` 的评测记录。所有记录都是**功能级对比**，不是正式 benchmark、统计检验或安全保证。
 
 | 记录 | 内容 | 来源脚本 | 原始实验提交 |
 | --- | --- | --- | --- |
@@ -18,7 +18,7 @@
 ## 复现环境
 
 ```powershell
-cd D:\Research26fall\prior_experiment\nano-cua-lab
+cd D:\Research26fall\prior_experiment\reviewer2-cua
 uv sync --all-packages --all-groups
 uv run playwright install chromium
 uv run pytest -q
