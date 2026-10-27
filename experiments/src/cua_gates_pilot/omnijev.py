@@ -3,8 +3,8 @@
 This is the M3 real-model adapter for the two-gate pilot: it does **not** decide
 anything itself. It asks the frozen OneJev model for calibrated `noul`
 probabilities and returns them as the normalized signals consumed by
-``gates.py``. The server used in this repo is deployed by
-``D:\\Research26fall\\omnijev-deploy`` (OneJev1.6-0.8B, Flide 0.1.4).
+``gates.py``. The server must be deployed externally (OneJev1.6-0.8B, Flide
+0.1.4); model weights are not part of this repository.
 
 No LLM SDK and no CUA base changes: plain stdlib HTTP against localhost.
 """

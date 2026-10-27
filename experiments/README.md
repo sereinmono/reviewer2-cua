@@ -115,7 +115,7 @@ uv run cua-gates-pilot --mode gated --ask-gate off
 
 ## 真实 OmniJev 接入（M3）、AskHuman prompt 诊断与 Playwright 实测
 
-本机已通过 `D:\Research26fall\omnijev-deploy` 部署 Flide + OneJev1.6-0.8B（`http://127.0.0.1:8000/v1/systemone`）。本试点新增：
+运行真实 OmniJev 测试前，需要先启动独立部署的 Flide + OneJev1.6-0.8B 服务（`http://127.0.0.1:8000/v1/systemone`；模型与部署不在本仓库内）。本试点新增：
 
 - `src/cua_gates_pilot/omnijev.py`：`OmniJevDiagnoseModel`，向本地 Flide 发送冻结诊断问题；
   - Observe Gate：`info_missing`、`possibly_stale`（`noul`）；
@@ -226,7 +226,7 @@ uv run python experiments/scripts/omnijev_playwright_check.py
 ## OmniJev / 人工接入边界
 
 - 本试点提供 `DiagnoseModel` Protocol、`MockOmniJev`（脚本化诊断信号）、`CallableDiagnoseModel`（把外部持有的冻结 OmniJev 客户端包成两个异步函数注入），以及上述 `OmniJevDiagnoseModel`（Flide `/v1/systemone`）。
-- 真实 OmniJev 的部署、权重与推理服务在独立目录 `D:\Research26fall\omnijev-deploy`；本包只通过 HTTP 访问它，不引入 pytorch/Flide 依赖，也不修改 CUA 基座。
+- 真实 OmniJev 的部署、权重与推理服务在本仓库之外；本包只通过 HTTP 访问它，不引入 pytorch/Flide 依赖，也不修改 CUA 基座。
 - `MockHumanProvider` 只返回任务预设的澄清文本，不接触页面真值或正确点击坐标。
 
 ## 明确不做（本试点范围）

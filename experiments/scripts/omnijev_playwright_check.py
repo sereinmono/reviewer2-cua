@@ -6,9 +6,9 @@ Scenarios:
    AskHuman Gate must ASK; the original candidate must not execute, the human
    clarification must lead to a replanned click on Discard.
 
-Run from cua-gates-pilot (requires the OmniJev Flide server from
-D:\\Research26fall\\omnijev-deploy to be running):
-    uv run python scripts/omnijev_playwright_check.py
+Run from the repository root (requires an external OmniJev/Flide deployment
+to be running; model weights and deployment are not part of this repo):
+    uv run python experiments/scripts/omnijev_playwright_check.py
 """
 
 from __future__ import annotations

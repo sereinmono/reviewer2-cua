@@ -7,7 +7,7 @@
 1. **插件组（plugin groups）**：`extensions/`，即 `nano-cua-extensions`；
 2. **试验与试验记录（experiments / records）**：`experiments/`（双 Gate 评分器）与 `reports/`（实测汇总）。
 
-CUA 基座 `nano-cua` 本身**不在本仓库内**，仍保持独立 Git 仓库和零运行时依赖；本仓库通过 uv workspace 指向同级目录的 `../nano-cua`。OmniJev 的模型权重/Flide 部署也在独立目录（本机为 `D:\Research26fall\omnijev-deploy`），不混入本仓库。
+CUA 基座 `nano-cua` 本身**不在本仓库内**，仍保持独立 Git 仓库和零运行时依赖；本仓库通过 uv workspace 指向同级目录的 `../nano-cua`。OmniJev 的模型权重/Flide 部署不在本仓库内，不随本仓库分发。
 
 ## 目录结构
 
@@ -44,7 +44,7 @@ reviewer2-cua/
 | CUA 基座 `nano-cua` | `../nano-cua`（独立 Git 仓库） | 只作为 uv path 依赖；**本仓库不修改基座** |
 | 插件组 | `extensions/` | 可替换的 Observer/Actor/Executor 兼容层 |
 | 双 Gate 试验 | `experiments/` | 只通过公开 `AgentPolicy` 接口插入，不改基座 |
-| OmniJev/Flide 部署 | `D:\Research26fall\omnijev-deploy`（独立目录） | 本仓库只用 HTTP 访问其 `/v1/systemone` |
+| OmniJev/Flide 部署 | 独立部署目录（不随仓库分发） | 本仓库只用 HTTP 访问其 `/v1/systemone` |
 | 试验记录 | `reports/` | 评测方法、结果表、限制与复现命令 |
 
 ## 快速开始
@@ -134,17 +134,9 @@ uv run pytest -q experiments/tests                 # 只测试验包
 
 这些记录均为**功能级对比**，不是正式 benchmark/安全保证；具体限制见各报告。
 
-## 与旧仓库的关系
+## 项目来源
 
-本仓库是整理后的整合快照，原有两个独立仓库仍保留在磁盘上作为备份：
-
-| 内容 | 来源 | 快照提交 |
-| --- | --- | --- |
-| 插件组 | `../nano-cua-extensions` | `247da68` |
-| 双 Gate 试验 | `../cua-gates-pilot` | `4886de3` |
-| 基座依赖快照 | `../nano-cua` | `204dd53`（不复制，不修改） |
-
-包名、模块导入路径、CLI 名称保持不变；只调整了目录布局、pyproject 路径与 uv workspace 配置。原始 Git 历史没有并入本仓库（本仓库从这里开始新历史）；如需保留完整历史，可后续用 `git subtree` 再导入。
+本仓库整合了插件组与双 Gate 评分器试验的当前实现；包名、模块导入路径与 CLI 名称保持不变。模型权重、部署配置和实验原始日志不随仓库分发；复现所需的本地服务、结果与限制见各文档及 `reports/`。
 
 ## 明确不做
 

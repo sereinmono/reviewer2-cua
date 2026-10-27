@@ -7,7 +7,7 @@
 > - 基座：`nano-cua` @ `204dd53`（未修改）
 > - 插件组：`nano-cua-extensions`（Playwright 浏览器组）
 > - 评分器：本地 Flide + `OmniJev/OneJev1.6-0.8B`
-> - 原始实验提交：`cua-gates-pilot@4886de3`；本仓库整合后脚本路径：`experiments/scripts/benchmark_efficiency_20.py`
+> - 脚本路径：`experiments/scripts/benchmark_efficiency_20.py`
 > - 运行环境：RTX 5070 Laptop 8 GB，Docker Desktop（WSL2），Playwright Chromium headless
 > - 运行方式：20 个任务 × baseline/gated 各 1 次，共 40 个 episode
 
@@ -75,7 +75,7 @@
 ## 5. 复现
 
 ```powershell
-cd D:\Research26fall\prior_experiment\reviewer2-cua
+cd reviewer2-cua
 uv sync --all-packages --all-groups
 uv run python experiments/scripts/benchmark_efficiency_20.py
 ```
